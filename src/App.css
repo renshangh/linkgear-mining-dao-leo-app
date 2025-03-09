@@ -1,0 +1,90 @@
+#root {
+  max-width: 1280px;
+  width: 100%; /* Ensure the root element takes up the full width */
+  margin: 0;
+  padding: 2rem;
+  text-align: left; /* Align text to the left */
+  position: absolute; /* Position the root element absolutely */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  background-color: white; /* Set the background color to white */
+  color: #333; /* Set the default text color */
+}
+
+.logo {
+  height: 3em; /* Reduce the height of the logo */
+  padding: 0.75em; /* Adjust the padding */
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+  background-color: #f9f9f9; /* Set a light background color for cards */
+  border: 1px solid #ddd; /* Add a border to cards */
+  border-radius: 8px; /* Add rounded corners to cards */
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distribute space between elements */
+  width: 100%; /* Ensure the header takes up the full width */
+  background-color: white; /* Set the background color to white */
+  padding: 1rem; /* Add padding to the header */
+  /* Remove the box-shadow property */
+}
+
+.header .logo {
+  margin-right: 10px; /* Adjust the margin */
+}
+
+.header h1 {
+  font-size: 1.5em; /* Reduce the font size of the heading */
+  margin: 0; /* Remove default margin */
+  white-space: nowrap; /* Prevent text wrapping */
+  color: #333; /* Set the text color */
+}
+
+.language-toggle {
+  margin-left: auto; /* Push the language toggle button to the far right */
+}
+
+.button-row {
+  display: flex;
+  gap: 10px; /* Add space between buttons */
+  margin-top: 1em; /* Add margin to the top */
+}
+
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  overflow: hidden; /* Prevent scrolling */
+  background-color: white; /* Set the background color to white */
+  color: #333; /* Set the default text color */
+}
