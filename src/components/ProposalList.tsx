@@ -1,4 +1,8 @@
 import React from 'react';
+import helloworld_program from "../../helloworld/build/main.aleo?raw";
+import { AleoWorker } from "../workers/AleoWorker";
+
+const aleoWorker = AleoWorker();
 
 interface Proposal {
   id: number;
@@ -6,6 +10,21 @@ interface Proposal {
   content: string;
   expirationDate: string;
 }
+
+async function execute() {
+    // get title, content, expirationDate
+    alert("Title: " + title + "\nContent: " + content + "\nExpiration Date: " + expirationDate);
+    setExecuting(true);
+    const result = await aleoWorker.localProgramExecution(
+      helloworld_program,
+      "main",
+      ["5u32", "5u32"],
+    );
+    setExecuting(false);
+
+    alert(JSON.stringify(result));
+  }
+
 
 interface ProposalListProps {
   proposals: Proposal[];
