@@ -8,12 +8,12 @@ interface Proposal {
   id: number;
   title: string;
   content: string;
-  expirationDate: string;
+  deadline: string;
 }
 
 async function execute() {
-    // get title, content, expirationDate
-    alert("Title: " + title + "\nContent: " + content + "\nExpiration Date: " + expirationDate);
+    // get title, content, deadline
+    alert("Title: " + title + "\nContent: " + content + "\nExpiration Date: " + deadline);
     setExecuting(true);
     const result = await aleoWorker.localProgramExecution(
       helloworld_program,
@@ -38,7 +38,7 @@ const ProposalList: React.FC<ProposalListProps> = ({ proposals, onVote }) => {
         <div key={proposal.id} className="proposal">
           <h3>{proposal.title}</h3>
           <p>{proposal.content}</p>
-          <p>Voting Deadline: {proposal.expirationDate}</p>
+          <p>Voting Deadline: {proposal.deadline}</p>
           <button onClick={() => onVote(proposal.id, 'agree')}>Agree</button>
           <button onClick={() => onVote(proposal.id, 'disagree')}>Disagree</button>
         </div>

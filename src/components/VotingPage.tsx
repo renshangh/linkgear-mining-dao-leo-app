@@ -4,7 +4,7 @@ interface Proposal {
   id: number;
   title: string;
   content: string;
-  expirationDate: string;
+  deadline: string;
 }
 
 // Set some sample data for the proposals
@@ -13,19 +13,19 @@ const sampleProposals: Proposal[] = [
     id: 1,
     title: "Proposal 1",
     content: "This is the first proposal",
-    expirationDate: "2021-10-01",
+    deadline: "2021-10-01",
   },
   {
     id: 2,
     title: "Proposal 2",
     content: "This is the second proposal",
-    expirationDate: "2021-10-15",
+    deadline: "2021-10-15",
   },
   {
     id: 3,
     title: "Proposal 3",
     content: "This is the third proposal",
-    expirationDate: "2021-11-01",
+    deadline: "2021-11-01",
   },
 ];
 
@@ -44,7 +44,7 @@ const VotingPage: React.FC = () => {
         <div key={proposal.id} className="proposal">
           <h3>{proposal.title}</h3>
           <p>{proposal.content}</p>
-          <p>Voting Deadline: {proposal.expirationDate}</p>
+          <p>Voting Deadline: {proposal.deadline}</p>
           <button onClick={() => handleVote(proposal.id, 'agree')}>Agree</button>
           <button onClick={() => handleVote(proposal.id, 'disagree')}>Disagree</button>
         </div>
